@@ -77,7 +77,7 @@ function levenberg_marquardt(df::OnceDifferentiable, initial_x::AbstractVector{T
     n = length(x)
     m = length(value(df))
     JJ = Matrix{T}(undef, n, n)
-    n_buffer = Vector{T}(undef, n)
+    n_buffer = Matrix{T}(undef, n, 1)
     Jdelta_buffer = similar(value(df))
 
     # and an alias for the jacobian
